@@ -1,48 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bookstore</title>
-    <link rel="icon" type="image/x-icon" href="./assets/icons/Logo_rund2.svg">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="">
-    <script src=""></script>
-    <script src=""></script>
-    <script src=""></script>
-</head>
-<body onload="renderBooks()">
-    <header>
-        <div class="header-section">
-            <div class="header-content">
-                <img src="./assets/icons/Logo_rund.svg" alt="Foto Logo">
-                <div>
-                    <h1>Bookstore</h1>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bookstore</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="./assets/icons/Logo_rund2.svg"
+        />
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="" />
+        <link rel="stylesheet" href="" />
+        <script src=""></script>
+        <script src=""></script>
+        <script src=""></script>
+    </head>
+    <body onload="renderBooks()">
+        <header>
+            <div class="header-section">
+                <div class="header-content-limit">
+                    <div class="header-content">
+                        <img
+                            src="./assets/icons/Logo_rund.svg"
+                            alt="Foto Logo"
+                        />
+                        <h1>Bookstore</h1>
+                    </div>
                 </div>
-
-
             </div>
-
-
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-    </header>
-    <div>
-
-    </div>
-<h1>bookstore</h1>    
-<h2>Wo Worte leuchten, finden Geschichten ein Zuhause.</h2>
-</body>
+        </header>
+        <main class="main-area">
+            <h3 tabindex="-1" aria-describedby="main-area">
+                Wo Worte leuchten, finden Geschichten ein Zuhause.
+            </h3>
+            <section id="book_list" class="section"></section>
+        </main>
+        <footer>
+            <div class="footer-section">
+                <div class="content-limit-footer">
+                    <img src="./assets/icons/Logo.svg" alt="Foto Buch " />
+                    <p>© 2026 Bookstore</p>
+                </div>
+            </div>
+        </footer>
+        <script src="./script.js"></script>
+    </body>
 </html>

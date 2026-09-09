@@ -1,19 +1,20 @@
-
 /* cinzel-decorative-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Cinzel Decorative';
-  font-style: normal;
-  font-weight: 400;
-  src: url('./assets/fonts/cinzel-decorative-v19-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Cinzel Decorative";
+    font-style: normal;
+    font-weight: 400;
+    src: url("./assets/fonts/cinzel-decorative-v19-latin-regular.woff2")
+        format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* cinzel-decorative-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Cinzel Decorative';
-  font-style: normal;
-  font-weight: 700;
-  src: url('./assets/fonts/cinzel-decorative-v19-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Cinzel Decorative";
+    font-style: normal;
+    font-weight: 700;
+    src: url("./assets/fonts/cinzel-decorative-v19-latin-700.woff2")
+        format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 * {
@@ -23,166 +24,206 @@
     position: relative;
 }
 
-
 html,
 body {
     font-size: 16px;
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; 
-    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header */
+/* header */
 .header-section {
-  background-image: url(./assets/img/Bookstore.png);
+    background-image: url(./assets/img/Bookstore.png);
     display: flex;
     width: 100%;
     flex-direction: column;
     height: 300px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover  ;
-    /* align-items: center; */
-    /* justify-content: start; */
-    /* object-fit: cover; */
+    background-size: cover;
+    align-items: center;
     box-sizing: border-box;
-  /* background-color: #4A2C2A; Mahagoni */
-  /* color: #F5EFE6; */
-  /* padding: 20px 20px; */
-  /* text-align: center; */
-  border-bottom: 2px solid #C9A14A; /* goldene Linie */
-  
-
+    border-bottom: 6px solid #c9a14a; /* goldene Linie */
 }
-.header-content > div {
-  font-size: 1.5rem;
-  font-family: Cinzel Decorative;
-  font-weight: 700;
-  color: #2B1E1A; }
-
+.header-content > h1 {
+    font-size: 2rem;
+    font-family: Cinzel Decorative;
+    font-weight: 700;
+    color: #dabab0;
+}
 
 .header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: #dcc7a1; /* warmes Goldbeige */
+    padding: 16px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(43, 30, 26, 0.3);
+    gap: 16px;
+    background-color: #692926d1; 
+}
+.header-content-limit {
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content:start ;
+    padding: 0 clamp(8px, 2.5dvw, 1440px);
+    margin: 32px;
+}
 
-  display: flex;
-  width: 50%;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  padding:  20px 20px;
-  background-color: #DCC7A1; /* warmes Goldbeige */
-  padding: 16px 16px;
-  margin: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(43, 30, 26, 0.3);
-  gap: 20px;  
+.header-content > img {
+    width: 48px;
+    height: 48px;
+}
+
+.main-area {
+
+background-color: #dabc7c;
+
+
+}
+.main-area > h3{
+
+background-color: #dabc7c;
+padding: 8px;
+
+
 }
 
 
+.section {
+width: 100%;
+height: 100vh;;
+background-color: #2e1c17;
 
-.header-content > img{
-width: 48px;
-height: 48px;
 }
 
 /* Cards */
 div.card {
-  background-color: #F5EFE6; /* Cremeweiß */
-  border: 1px solid #C9A14A;
-  border-radius: 6px;
-  padding: 20px;
-  margin: 15px;
-  transition: transform 0.3s ease;
+    background-color: #f5efe6; /* Cremeweiß */
+    border: 1px solid #c9a14a;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 15px;
+    transition: transform 0.3s ease;
 }
 
 div.card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 15px rgba(43, 30, 26, 0.4);
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(43, 30, 26, 0.4);
 }
 
 /* Buttons & Links */
-a, button {
-  background-color: #C9A14A; /* Gold */
-  color: #3B2F2F;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+a,
+button {
+    background-color: #c9a14a; /* Gold */
+    color: #3b2f2f;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-a:hover, button:hover {
-  background-color: #DCC7A1;
+a:hover,
+button:hover {
+    background-color: #dcc7a1;
 }
 
 /* Footer */
-footer {
-  background-color: #2E1C17; /* dunkles Sepia */
-  color: #F5EFE6;
-  text-align: center;
-  padding: 30px;
-  font-size: 0.9em;
-  border-top: 2px solid #C9A14A;
-}
-footer {
-  background: linear-gradient(#3B2F2F, #2E1C17);
+.content-limit-footer {
+    background-color: #2e1c17; /* dunkles Sepia */
+    color: #f5efe6;
+    text-align: center;
+    /* padding: 30px; */
+    font-size: 0.9em;
+    border-top: 2px solid #c9a14a;
 }
 
+
+
+.content-limit-footer > img {
+width: 300px;
+height: 200px;
+padding: 0px 16px 0px 16px;
+margin-bottom: -8px;
+
+}
+footer {
+  border-top: 6px solid #c9a14a; /* goldene Linie */
+}
+
+
 nav a {
-  color: #F5EFE6;
-  text-decoration: none;
-  padding: 10px 15px;
-  font-weight: 600;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+    color: #f5efe6;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 600;
+    transition:
+        color 0.3s ease,
+        text-shadow 0.3s ease;
 }
 
 nav a:hover {
-  color: #C9A14A; /* Gold */
-  text-shadow: 0 0 6px rgba(201, 161, 74, 0.6);
+    color: #c9a14a; /* Gold */
+    text-shadow: 0 0 6px rgba(201, 161, 74, 0.6);
 }
 .icon {
-  color: #C9A14A;
-  font-size: 1.4em;
-  transition: transform 0.3s ease, color 0.3s ease;
+    color: #c9a14a;
+    font-size: 1.4em;
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
 }
 
 .icon:hover {
-  transform: scale(1.15);
-  color: #DCC7A1;
+    transform: scale(1.15);
+    color: #dcc7a1;
 }
-button, a.button {
-  background-color: #C9A14A;
-  color: #3B2F2F;
-  padding: 12px 24px;
-  border-radius: 4px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+button,
+a.button {
+    background-color: #c9a14a;
+    color: #3b2f2f;
+    padding: 12px 24px;
+    border-radius: 4px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-button:hover, a.button:hover {
-  background-color: #DCC7A1;
-  box-shadow: 0 0 10px rgba(201, 161, 74, 0.7);
+button:hover,
+a.button:hover {
+    background-color: #dcc7a1;
+    box-shadow: 0 0 10px rgba(201, 161, 74, 0.7);
 }
 .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(43, 30, 26, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(43, 30, 26, 0.4);
 }
 footer a {
-  color: #F5EFE6;
-  text-decoration: none;
-  transition: color 0.3s ease;
+    color: #f5efe6;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-  color: #C9A14A;
+    color: #c9a14a;
 }
