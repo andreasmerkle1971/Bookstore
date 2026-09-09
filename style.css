@@ -23,25 +23,15 @@
     position: relative;
 }
 
-body {
-  /* display: flex;
-  width: 100vh;
-  flex-direction: column;
-  background-color: #3B2F2F; /* dunkles Holzbraun */
-  color: #2B1E1A; /* Textfarbe */
-  font-family: 'Merriweather', serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; 
-}
+
 html,
 body {
     font-size: 16px;
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    color: #2B1E1A; /* Textfarbe */
-  font-family: 'Merriweather', serif;
+     /* Textfarbe */
+  /* font-family: 'Merriweather', serif; */
   margin: 0;
   padding: 0;
   box-sizing: border-box; 
@@ -70,11 +60,11 @@ body {
   
 
 }
-.header-content >h1 {
+.header-content > div {
+  font-size: 1.5rem;
   font-family: Cinzel Decorative;
   font-weight: 700;
-  color: #F5EFE6;
-}
+  color: #2B1E1A; }
 
 
 .header-content {
