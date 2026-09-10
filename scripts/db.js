@@ -2,6 +2,7 @@ let books = [
     {
         name: "Die Geheimnisse des Ozeans",
         author: "Clara Meer",
+        image: "1 Die Geheimnisse des Ozeans.png",
         likes: 1250,
         liked: true,
         price: 19.99,
@@ -38,6 +39,7 @@ let books = [
     {
         name: "Der vergessene Pfad",
         author: "Maximilian Schwarz",
+        image: "2 Der vergessene Pfad.png",
         likes: 980,
         liked: false,
         price: 14.5,
@@ -48,6 +50,7 @@ let books = [
     {
         name: "Die Farben des Himmels",
         author: "Laura Blau",
+        image: "3 Die Farben des Himmels.png",
         likes: 1520,
         liked: true,
         price: 22.95,
@@ -84,6 +87,7 @@ let books = [
     {
         name: "Das Rätsel der Zeit",
         author: "Alexander Weiss",
+        image: "4 Das Rätsel der Zeit.png",
         likes: 750,
         liked: false,
         price: 18.0,
@@ -105,6 +109,7 @@ let books = [
     {
         name: "Der letzte Wächter",
         author: "Sabine Grün",
+        image: "5 Der letzte Wächter.png",
         likes: 1300,
         liked: true,
         price: 16.75,
@@ -115,6 +120,7 @@ let books = [
     {
         name: "Im Schatten des Mondes",
         author: "Philipp Silber",
+        image: "6 Im Schatten des Mondes.png",
         likes: 890,
         liked: false,
         price: 12.3,
@@ -136,6 +142,7 @@ let books = [
     {
         name: "Jenseits der Sterne",
         author: "Oliver Schwarz",
+        image: "7 Jenseits der Sterne.png",
         likes: 1450,
         liked: true,
         price: 21.0,
@@ -152,6 +159,7 @@ let books = [
     {
         name: "Das verborgene Königreich",
         author: "Elena Gold",
+        image: "8 Das verborgene Königreich.png",
         likes: 920,
         liked: false,
         price: 17.5,
@@ -168,6 +176,7 @@ let books = [
     {
         name: "Liebe in Zeiten des Krieges",
         author: "Emilia Rot",
+        image: "9 Liebe zu Zeiten des Krieges.png",
         likes: 1800,
         liked: true,
         price: 19.99,
