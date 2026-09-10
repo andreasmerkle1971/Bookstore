@@ -24,13 +24,13 @@ console.table(book);
     <div class="books-gallery"><img src="./assets/img/${book.image}" alt="${book.name}" loading = "lazy"></div>
     <div class="books-gallery">likes: ${book.likes}</div>
     <div class="books-gallery">liked: ${book.liked}</div>
-    <div class="books-gallery">Preis: ${book.price}</div>
+    <div class="books-gallery">Preis: ${book.price}€</div>
     <div class="books-gallery">Veröffentlichungsjahr: ${book.publishedYear}</div>
     <div class="books-gallery">Genre: ${book.genre}</div>
     <div >
         <div class="comments">Kommentare: ${book.comments}</div>
         </div>
-        <input type="text">
+        <input id="input-comment" type="text" placeholder = " schreibe Deinen Kommentar">
     
     </div>
     `;
