@@ -27,7 +27,10 @@ console.table(book);
     <div class="books-gallery">Preis: ${book.price}</div>
     <div class="books-gallery">Veröffentlichungsjahr: ${book.publishedYear}</div>
     <div class="books-gallery">Genre: ${book.genre}</div>
-    <div >Kommentare: ${book.comments}</div>
+    <div >
+        <div class="comments">Kommentare: ${book.comments}</div>
+        </div>
+        <input type="text">
     
     </div>
     `;
