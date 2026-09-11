@@ -30,7 +30,7 @@ onclick="likeDislikeToggle(${index})"></div>
         <div class="books-gallery">Veröffentlichungsjahr: ${book.publishedYear}</div>
         <div class="books-gallery">Genre: ${book.genre}</div>
         <div class="comments">Kommentare: ${book.comments}</div>
-        <input id="input-comment" type="text" placeholder = " Schreibe Deinen Kommentar">
+        <input class="input-comment" id="input-comment-${index}" type="text" placeholder = " Schreibe Deinen Kommentar" onkeydown="addComment(${index})">
     </div>
     `;
 }
@@ -42,26 +42,6 @@ function formatPrice(price) {
         maximumFractionDigits: 2,
     }).format(price);
 }
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     let likeIcon = document.getElementById("like-icon");
-//     let currentLikes = document.getElementById("like-count-0");
-
-//     console.log(likeIcon);
-//     console.log(currentLikes.textContent);
-// });
-// // document.addEventListener('DOMContentLoaded', () => {
-// //     let likeIcon = document.getElementById('like-icon');
-// //     let currentLikes = document.getElementById('like-count-0');
-
-// //     // Prüfen, ob BEIDE Elemente auf der aktuellen Seite existieren
-// //     if (likeIcon && currentLikes) {
-// //         console.log(likeIcon);
-// //         console.log(currentLikes.textContent);
-// //     } else {
-// //         console.log("Like-Elemente wurden auf dieser Seite nicht gefunden.");
-// //     }
-// // });
 
 function likeDislikeToggle(index) {
     const book = books[index];
