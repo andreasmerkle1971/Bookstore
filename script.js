@@ -22,7 +22,7 @@ function getNoteTemplate(index) {
         <div class="books-gallery"><img src="./assets/img/${book.image}" alt="${book.name}" loading = "lazy"></div>
 <div>
 
-<div class="like"> likes: ${book.likes}  <img id="heart-icon-0" src="./assets/icons/dislike.svg"></div>
+<div class="like"> likes: ${book.likes}  <img id="${book.liked './assets/icons/like.svg' : './assets/icons/dislike.svg'}" alt="like Bild"></div>
 </div>
         <div id="price" class="books-gallery">Preis: ${formatierterPrice}</div>
         <div class="books-gallery">Veröffentlichungsjahr: ${book.publishedYear}</div>
@@ -55,3 +55,4 @@ function likeDislikeToggle(index) {
     // <img id="heart-icon-0" src="./assets/icons/dislike.svg" onclick="likeDislikeToggle(0)">
     // <img id="heart-icon-1" src="./assets/icons/dislike.svg" onclick="likeDislikeToggle(1)">
 }
+

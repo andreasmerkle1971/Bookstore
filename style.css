@@ -160,6 +160,16 @@ div.card {
     align-items: center;
     gap: 16px;
 }
+
+.like img{
+    cursor: pointer;
+}
+
+.like img:active{
+    transform: scale(0.9);
+
+}
+
 .comments {
     width: 100%;
     background-color: #dabc7c; /* Cremeweiß */
