@@ -11,35 +11,47 @@ function renderBooks() {
 function getNoteTemplate(index) {
     const book = books[index];
     console.log("Aktuelles Buch-Objekt:", book);
-    
+
     const formatierterPrice = formatPrice(book.price);
     console.table(book);
 
     return `
     <div class="card">
-    <div class="books-gallery"><h2>${book.name}</h2></div>
-    <div class="books-gallery">Author: ${book.author}</div>
-    
-    <div class="books-gallery"><img src="./assets/img/${book.image}" alt="${book.name}" loading = "lazy"></div>
-    <div class="books-gallery">likes: ${book.likes}</div>
-    <div class="books-gallery">liked: ${book.liked}</div>
-    <div id="price" class="books-gallery">Preis: ${formatierterPrice}</div>
-    <div class="books-gallery">Veröffentlichungsjahr: ${book.publishedYear}</div>
-    <div class="books-gallery">Genre: ${book.genre}</div>
-    <div >
+        <div class="books-gallery"><h2>${book.name}</h2></div>
+        <div class="books-gallery">Author: ${book.author}</div>
+        <div class="books-gallery"><img src="./assets/img/${book.image}" alt="${book.name}" loading = "lazy"></div>
+<div>
+
+<div class="like"> likes: ${book.likes}  <img id="heart-icon-0" src="./assets/icons/dislike.svg"></div>
+</div>
+        <div id="price" class="books-gallery">Preis: ${formatierterPrice}</div>
+        <div class="books-gallery">Veröffentlichungsjahr: ${book.publishedYear}</div>
+        <div class="books-gallery">Genre: ${book.genre}</div>
         <div class="comments">Kommentare: ${book.comments}</div>
-        </div>
-        <input id="input-comment" type="text" placeholder = " schreibe Deinen Kommentar">
-    
+        <input id="input-comment" type="text" placeholder = " Schreibe Deinen Kommentar">
     </div>
     `;
 }
 function formatPrice(price) {
-   
     return new Intl.NumberFormat("de-DE", {
         style: "currency",
         currency: "EUR",
         minimumFractionDigits: 2,
-        maximumFractionDigits:2,
+        maximumFractionDigits: 2,
     }).format(price);
+}
+
+function likeDislikeToggle(index) {
+    book.liked[index] = !book.liked[index];
+
+    const heartElement = document.getElementById(`heart-element-${index}`);
+
+    if (book.liked[index]) {
+        heartElement.src = "./assets/icons/like.svg";
+    } else {
+        heartElement.src = "./assets/icons/dislike.svg";
+    }
+
+    // <img id="heart-icon-0" src="./assets/icons/dislike.svg" onclick="likeDislikeToggle(0)">
+    // <img id="heart-icon-1" src="./assets/icons/dislike.svg" onclick="likeDislikeToggle(1)">
 }
