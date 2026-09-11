@@ -1,6 +1,6 @@
 function renderBooks() {
     const booksContainer = document.getElementById("book_list");
-    if(!booksContainer) return;
+    if (!booksContainer) return;
 
     booksContainer.innerHTML = "";
 
@@ -9,12 +9,11 @@ function renderBooks() {
     }
 }
 function getNoteTemplate(index) {
-
-const book = books[index];
-console.log("Aktuelles Buch-Objekt:", book);
-
-
-console.table(book);
+    const book = books[index];
+    console.log("Aktuelles Buch-Objekt:", book);
+    
+    const formatierterPrice = formatPrice(book.price);
+    console.table(book);
 
     return `
     <div class="card">
@@ -24,7 +23,7 @@ console.table(book);
     <div class="books-gallery"><img src="./assets/img/${book.image}" alt="${book.name}" loading = "lazy"></div>
     <div class="books-gallery">likes: ${book.likes}</div>
     <div class="books-gallery">liked: ${book.liked}</div>
-    <div id="price" class="books-gallery">Preis: ${book.price}€</div>
+    <div id="price" class="books-gallery">Preis: ${formatierterPrice}</div>
     <div class="books-gallery">Veröffentlichungsjahr: ${book.publishedYear}</div>
     <div class="books-gallery">Genre: ${book.genre}</div>
     <div >
@@ -35,11 +34,12 @@ console.table(book);
     </div>
     `;
 }
-
-
-function formatCurrency(){
-    const number = document.getElementById(${book.price})
-
-
-
+function formatPrice(price) {
+   
+    return new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+        minimumFractionDigits: 2,
+        maximumFractionDigits:2,
+    }).format(price);
 }
