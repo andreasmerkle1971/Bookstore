@@ -24,7 +24,7 @@ console.table(book);
     <div class="books-gallery"><img src="./assets/img/${book.image}" alt="${book.name}" loading = "lazy"></div>
     <div class="books-gallery">likes: ${book.likes}</div>
     <div class="books-gallery">liked: ${book.liked}</div>
-    <div class="books-gallery">Preis: ${book.price}€</div>
+    <div id="price" class="books-gallery">Preis: ${book.price}€</div>
     <div class="books-gallery">Veröffentlichungsjahr: ${book.publishedYear}</div>
     <div class="books-gallery">Genre: ${book.genre}</div>
     <div >
@@ -34,4 +34,12 @@ console.table(book);
     
     </div>
     `;
+}
+
+
+function formatCurrency(){
+    const number = document.getElementById(${book.price})
+
+
+
 }
