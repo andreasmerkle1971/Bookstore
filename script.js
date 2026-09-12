@@ -10,11 +10,15 @@ function renderBooks() {
 }
 function getNoteTemplate(index) {
     const book = books[index];
-    console.log("Aktuelles Buch-Objekt:", book);
+
+    const comments = Array.isArray(book.comments) && book.comments.length > 0
+   
+    ? book.comments.join('<br>') 
+    : book.comments;
+
+     console.log(Array.isArray(comments));
 
     const formatierterPrice = formatPrice(book.price);
-    console.table(book);
-
     return `
     <div class="card">
         <div class="books-gallery"><h2>${book.name}</h2></div>
@@ -29,8 +33,8 @@ onclick="likeDislikeToggle(${index})"></div>
         <div id="price" class="books-gallery">Preis: ${formatierterPrice}</div>
         <div class="books-gallery">Veröffentlichungsjahr: ${book.publishedYear}</div>
         <div class="books-gallery">Genre: ${book.genre}</div>
-        <div class="comments">Kommentare: ${book.comments}</div>
-        <input class="input-comment" id="input-comment-${index}" type="text" placeholder = " Schreibe Deinen Kommentar" onkeydown="addComment(${index})">
+        <div class="comments">Kommentare: ${comments}</div>
+        <input class="input-comment" id="input-comment-${index}" type="text" placeholder = " Schreibe Deinen Kommentar" onkeydown="addComment(event, ${index})">
     </div>
     `;
 }
@@ -52,16 +56,30 @@ function likeDislikeToggle(index) {
     console.log(likeIcon);
     console.log(currentLikes);
 
-
     if (book.liked) {
         book.liked = false;
-        book.likes --;
+        book.likes--;
         likeIcon.src = "./assets/icons/dislike.svg";
     } else {
         book.liked = true;
-        book.likes ++;
+        book.likes++;
         likeIcon.src = "./assets/icons/like.svg";
-        }
-        currentLikes.textContent = `likes: ${book.likes}`;
+    }
+    currentLikes.textContent = `likes: ${book.likes}`;
 }
 
+function addComment(event, index) {
+    if (event.key === "Enter") {
+        const inputField = document.getElementById(`input-comment-${index}`);
+        const commentText = inputField.value.trim();
+
+        if (commentText !== "") {
+            if (!Array.isArray(books[index].comments)) {
+                books[index].comments = [];
+            }
+
+            books[index].comments.push(commentText);
+            renderBooks();
+        }
+    }
+}
