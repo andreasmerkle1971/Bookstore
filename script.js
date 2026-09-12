@@ -25,16 +25,18 @@ function getNoteTemplate(index) {
         <div class="books-gallery">Author: ${book.author}</div>
         <div class="books-gallery"><img src="./assets/img/${book.image}" alt="${book.name}" loading = "lazy"></div>
 <div>
-
-<div class="like"> <span id="like-count-${index}">likes: ${book.likes} </span> 
-<img id="like-icon-${index}" src="${book.liked ? "./assets/icons/like.svg" : "./assets/icons/dislike.svg"}" alt="like Bild" 
-onclick="likeDislikeToggle(${index})"></div>
+    <div class="like"> <span id="like-count-${index}">likes: ${book.likes} </span> 
+    <img id="like-icon-${index}" src="${book.liked ? "./assets/icons/like.svg" : "./assets/icons/dislike.svg"}" alt="like Bild" 
+    onclick="likeDislikeToggle(${index})"></div>
 </div>
-        <div id="price" class="books-gallery">Preis: ${formatierterPrice}</div>
-        <div class="books-gallery">Veröffentlichungsjahr: ${book.publishedYear}</div>
-        <div class="books-gallery">Genre: ${book.genre}</div>
-        <div class="comments">Kommentare: ${comments}</div>
-        <input class="input-comment" id="input-comment-${index}" type="text" placeholder = " Schreibe Deinen Kommentar" onkeydown="addComment(event, ${index})">
+    <div id="price" class="books-gallery">Preis: ${formatierterPrice}</div>
+    <div class="books-gallery">Veröffentlichungsjahr: ${book.publishedYear}</div>
+    <div class="books-gallery">Genre: ${book.genre}</div>
+    <div class="comments" id="comments-box-${index}">Kommentare: ${comments}</div>
+<div class="input-box">
+        <input class="input-comment" id="input-comment-${index}" type="text" placeholder = " Schreibe Deinen Kommentar" onkeydown="addComment(event, ${index}, 'keydown')">
+        <button type="button" onclick="addComment(event, ${index}, 'click')">return</button>
+</div>
     </div>
     `;
 }
@@ -68,8 +70,8 @@ function likeDislikeToggle(index) {
     currentLikes.textContent = `likes: ${book.likes}`;
 }
 
-function addComment(event, index) {
-    if (event.key === "Enter") {
+function addComment(event, index, triggerType) {
+    if (triggerType === 'click' || (triggerType === 'keydown' && event.key === "Enter")) {
         const inputField = document.getElementById(`input-comment-${index}`);
         const commentText = inputField.value.trim();
 
@@ -79,7 +81,15 @@ function addComment(event, index) {
             }
 
             books[index].comments.push(commentText);
-            renderBooks();
+
+            const commentsBox = document.getElementById(`comments-box-${index}`);
+            if (commentsBox) {
+
+                commentsBox.innerHTML = `Kommentare:<br>${books[index].comments.join('<br>')} `;
+            }
+          inputField.value = "";
+          
+            
         }
     }
 }
