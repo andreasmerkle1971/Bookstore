@@ -10,9 +10,12 @@ function getNoteTemplate(index) {
     const book = books[index];
     const comments =
         Array.isArray(book.comments) && book.comments.length > 0
-            ? book.comments.map((c) => c.comment).join("<br>")
+            ? book.comments.map((c) => `<p> <strong>${c.name}:</strong><br> ${c.comment}</p>`).join("")
             : book.comments;
     console.log(Array.isArray(comments));
+
+
+
     const formatierterPrice = formatPrice(book.price);
     return `
     <div class="card">
@@ -28,7 +31,9 @@ function getNoteTemplate(index) {
         <div class="books-gallery">Veröffentlichungsjahr: ${book.publishedYear}</div>
         <div class="books-gallery">Genre: ${book.genre}</div>
         <p>Kommentare: </p>
-        <p><div class="comments"  id="comments-box-${index}">${comments}</div></p>
+        <p>
+        <div class="comments"  id="comments-box-${index}">${comments}</div>
+        </p>
 <div class="input-box">
         <input class="input-comment" id="input-comment-${index}" type="text" placeholder = " Schreibe Deinen Kommentar" onkeydown="addComment(event, ${index}, 'keydown')">
         <button type="button" onclick="addComment(event, ${index}, 'click')">return</button>
@@ -73,7 +78,7 @@ function addComment(event, index, triggerType) {
         // const commentReverse = comments.reverse();
         if (commentText !== "") {
             if (!Array.isArray(books[index].comments)) {
-                books[index].comments = [];
+                books[index].comments.name = [];
             }
             books[index].comments.unshift({
                 name:"Du",
