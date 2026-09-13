@@ -162,18 +162,15 @@ div.card {
     gap: 16px;
 }
 
-.like img{
+.like img {
     cursor: pointer;
 }
 
-.like img:active{
+.like img:active {
     transform: scale(0.9);
-
 }
 
-.input-box{
-
-
+.input-box {
     font-size: 16px;
     display: flex;
     flex-direction: row;
@@ -181,26 +178,37 @@ div.card {
     gap: 8px;
     margin-top: 8px;
     align-items: center;
-
 }
 
 .comments {
     width: 100%;
-    height:100px;
+    height: 100px;
     overflow-y: auto;
-    background-color: #dabc7c; /* Cremeweiß */
+    background-color: #c9a14a; /* Cremeweiß */
     border: 2px solid rgba(18, 70, 88, 1);
     border-radius: 8px;
     padding: 2px;
-    /* margin: 15px; */
     transition: transform 0.3s ease;
+    font-size: 1rem;
+    color: #4a2c2a;
+    margin: 6px 0px 16px 0px;
+}
+.comments::-webkit-scrollbar {
+    scrollbar-width: thin;
+}
+.comments::-webkit-scrollbar-thumb {
+    background: #2b1e1a;
+    border-radius: 20px;
+    border: 1px solid #c9a14a;
+}
+.comments::-webkit-scrollbar-thumb:hover {
+    background: #7a6a5a;
 }
 
 .input-comment {
     width: 100%;
     height: 25px;
-    background-color: #F5EFE6;
-    
+    background-color: #f5efe6;
 }
 
 div.card:hover {
@@ -209,9 +217,8 @@ div.card:hover {
     box-shadow: 0 6px 15px rgba(43, 30, 26, 0.4);
 }
 
-
 button {
-    background-color: #c9a14a; 
+    background-color: #c9a14a;
     color: #3b2f2f;
     height: 25px;
     border: none;

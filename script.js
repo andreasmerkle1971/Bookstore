@@ -10,7 +10,7 @@ function getNoteTemplate(index) {
     const book = books[index];
     const comments =
         Array.isArray(book.comments) && book.comments.length > 0
-            ? book.comments.map(c => c.comment).join("<br>")
+            ? book.comments.map((c) => c.comment).join("<br>")
             : book.comments;
     console.log(Array.isArray(comments));
     const formatierterPrice = formatPrice(book.price);
@@ -28,7 +28,7 @@ function getNoteTemplate(index) {
         <div class="books-gallery">Veröffentlichungsjahr: ${book.publishedYear}</div>
         <div class="books-gallery">Genre: ${book.genre}</div>
         <p>Kommentare: </p>
-        <div class="comments" id="comments-box-${index}">${comments}</div>
+        <p><div class="comments"  id="comments-box-${index}">${comments}</div></p>
 <div class="input-box">
         <input class="input-comment" id="input-comment-${index}" type="text" placeholder = " Schreibe Deinen Kommentar" onkeydown="addComment(event, ${index}, 'keydown')">
         <button type="button" onclick="addComment(event, ${index}, 'click')">return</button>
@@ -76,16 +76,15 @@ function addComment(event, index, triggerType) {
                 books[index].comments = [];
             }
             books[index].comments.unshift({
-          name:"",
-            comment: commentText
-        });
+                name:"Du",
+                comment: commentText,
+            });
 
             const commentsBox = document.getElementById(
                 `comments-box-${index}`,
             );
             if (commentsBox) {
-
-                commentsBox.innerHTML = `${books[index].comments.map(c=> c.comment).join("<br>")} `;
+                commentsBox.innerHTML = `${books[index].comments.map((c) => c.comment).join("<br>")} `;
             }
             inputField.value = "";
         }
