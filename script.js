@@ -31,9 +31,9 @@ function getNoteTemplate(index) {
         <div class="books-gallery">Veröffentlichungsjahr: ${book.publishedYear}</div>
         <div class="books-gallery">Genre: ${book.genre}</div>
         <p>Kommentare: </p>
-        <p>
+        
         <div class="comments"  id="comments-box-${index}">${comments}</div>
-        </p>
+        
 <div class="input-box">
         <input class="input-comment" id="input-comment-${index}" type="text" placeholder = " Schreibe Deinen Kommentar" onkeydown="addComment(event, ${index}, 'keydown')">
         <button type="button" onclick="addComment(event, ${index}, 'click')">return</button>
@@ -78,7 +78,7 @@ function addComment(event, index, triggerType) {
         // const commentReverse = comments.reverse();
         if (commentText !== "") {
             if (!Array.isArray(books[index].comments)) {
-                books[index].comments.name = [];
+                books[index].comments = [];
             }
             books[index].comments.unshift({
                 name:"Du",
@@ -89,7 +89,8 @@ function addComment(event, index, triggerType) {
                 `comments-box-${index}`,
             );
             if (commentsBox) {
-                commentsBox.innerHTML = `${books[index].comments.map((c) => c.comment).join("<br>")} `;
+                commentsBox.innerHTML = books[index].comments
+                .map((c) => `<p> <strong>${c.name}:</strong><br> ${c.comment}</p>`).join("");
             }
             inputField.value = "";
         }
