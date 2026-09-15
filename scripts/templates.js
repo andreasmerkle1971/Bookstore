@@ -1,4 +1,4 @@
-function getNoteTemplate(index) {
+function getNoteTemplate(index, commentsInput) {
     const book = books[index];
     const comments = Array.isArray(book.comments) && book.comments.length > 0
             ? book.comments.map((c) =>`<p> <strong>${c.name}:</strong><br> ${c.comment}</p>`,).join("")

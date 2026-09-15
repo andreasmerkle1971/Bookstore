@@ -40,22 +40,26 @@ function addComment(event, index, triggerType) {
         const inputField = document.getElementById(`input-comment-${index}`);
         const commentText = inputField.value.trim();
         if (commentText !== "") {
-            if (!Array.isArray(books[index].comments)) {
+            if (!Array.isArray(books[index].comments))
                 books[index].comments = [];
-            }
-            books[index].comments.unshift({
-                name: "Du",
-                comment: commentText,
-            });
-            const commentsBox = document.getElementById(
-                `comments-box-${index}`,
-            );
-            if (commentsBox) {
-                commentsBox.innerHTML = books[index].comments
-                    .map((c) =>`<p> <strong>${c.name}:</strong><br> ${c.comment}</p>`,)
-                    .join("");
-            }
+            addLatestComment(index, commentText);
+            if (commentsBox) renderLatestCommentBox(index, commentsBox);
             inputField.value = "";
         }
     }
+}
+
+function addLatestComment(index, text, listInput) {
+    let list = listInput;
+    listInput[index].comments.unshift({
+        name: "Du",
+        comment: commentText,
+    });
+    const commentsBox = document.getElementById(`comments-box-${index}`);
+}
+
+function renderLatestCommentBox(index, commentsContainer) {
+    commentsContainer.innerHTML = books[index].comments
+        .map((c) => `<p> <strong>${c.name}:</strong><br> ${c.comment}</p>`)
+        .join("");
 }
