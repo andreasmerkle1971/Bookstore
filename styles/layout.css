@@ -114,14 +114,18 @@ footer {
 
 /* unter 480px */
 @media (max-width: 480px) {
-    .input-comment::placeholder {
-        font-size: 8px;
+    button {
+        
+        font-size: 0;
+        width: 25px;
+        height: 25px;
+        background-color: #a46433;
+        background-image: url("/assets/icons/senden.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
     }
-}
-
-/* unter 380px Breite */
-@media (max-width: 380px) {
-    .input-comment::placeholder {
-        font-size: 6px;
-    }
+    /* .input-comment::placeholder {
+        font-size: 1rem;
+    } */
 }

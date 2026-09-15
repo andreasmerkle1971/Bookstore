@@ -145,16 +145,4 @@ footer {
     border-top: 6px solid #c9a14a;
 }
 
-/* unter 480px */
-@media (max-width: 480px) {
-    .input-comment::placeholder {
-        font-size: 8px;
-    }
-}
 
-/* unter 380px Breite */
-@media (max-width: 380px) {
-    .input-comment::placeholder {
-        font-size: 6px;
-    }
-}

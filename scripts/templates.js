@@ -20,7 +20,7 @@ function getNoteTemplate(index) {
         <div class="books-gallery">Genre: ${book.genre}</div>
         <p>Kommentare: </p><div class="comments"  id="comments-box-${index}">${comments}</div>        
 <div class="input-box">
-        <input class="input-comment" id="input-comment-${index}" type="text" placeholder = " Schreibe Deinen Kommentar" onkeydown="addComment(event, ${index}, 'keydown')">
+        <input class="input-comment" id="input-comment-${index}" type="text" placeholder = "Dein Kommentar ..." onkeydown="addComment(event, ${index}, 'keydown')">
         <button type="button" onclick="addComment(event, ${index}, 'click')">senden</button>
 </div>
     </div>
