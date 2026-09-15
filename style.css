@@ -29,7 +29,7 @@
     transform: translate(4px, -8px);
     box-shadow: 0 0 12px rgb(27, 104, 137);
     border: 2px solid rgba(107, 193, 225, 1);
-    cursor: pointer;
+   
 }
 html,
 body {
