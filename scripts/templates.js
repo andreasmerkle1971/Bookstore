@@ -3,7 +3,6 @@ function getNoteTemplate(index) {
     const comments = Array.isArray(book.comments) && book.comments.length > 0
             ? book.comments.map((c) =>`<p> <strong>${c.name}:</strong><br> ${c.comment}</p>`,).join("")
             : book.comments;
-    console.log(Array.isArray(comments));
     const formatierterPrice = formatPrice(book.price);
     return `
     <div class="card">

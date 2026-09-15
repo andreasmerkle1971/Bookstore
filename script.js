@@ -20,8 +20,8 @@ function likeDislikeToggle(index) {
     const book = books[index];
     const likeIcon = document.getElementById(`like-icon-${index}`);
     const currentLikes = document.getElementById(`like-count-${index}`);
-    console.log(likeIcon);
-    console.log(currentLikes);
+    // console.log(likeIcon);
+    // console.log(currentLikes);
     if (book.liked) {
         book.liked = false;
         book.likes--;
