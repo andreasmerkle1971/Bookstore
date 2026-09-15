@@ -43,19 +43,21 @@ function addComment(event, index, triggerType) {
             if (!Array.isArray(books[index].comments))
                 books[index].comments = [];
             addLatestComment(index, commentText);
+            const commentsBox = document.getElementById(
+                `comments-box-${index}`,
+            );
             if (commentsBox) renderLatestCommentBox(index, commentsBox);
             inputField.value = "";
         }
     }
 }
 
-function addLatestComment(index, text, listInput) {
-    let list = listInput;
-    listInput[index].comments.unshift({
+function addLatestComment(index, commentText) {
+    // let list = listInput;
+    books[index].comments.unshift({
         name: "Du",
         comment: commentText,
     });
-    const commentsBox = document.getElementById(`comments-box-${index}`);
 }
 
 function renderLatestCommentBox(index, commentsContainer) {

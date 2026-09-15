@@ -1,14 +1,21 @@
-function getNoteTemplate(index, commentsInput) {
+function getNoteTemplate(index) {
     const book = books[index];
-    const comments = Array.isArray(book.comments) && book.comments.length > 0
-            ? book.comments.map((c) =>`<p> <strong>${c.name}:</strong><br> ${c.comment}</p>`,).join("")
+    const comments =
+        Array.isArray(book.comments) && book.comments.length > 0
+            ? book.comments
+                  .map(
+                      (c) =>
+                          `<p> <strong>${c.name}:</strong><br> ${c.comment}</p>`,
+                  )
+                  .join("")
             : book.comments;
+
     const formatierterPrice = formatPrice(book.price);
     return `
     <div class="card">
         <div class="books-gallery"><h2>${book.name}</h2></div>
         <div class="books-gallery">Author: ${book.author}</div>
-        <div class="books-gallery"><img src="./assets/img/${book.image}" alt="${book.name}" loading = "lazy"></div>
+        <div class="books-gallery"><img src="./assets/img/${book.image}" alt="${book.name}" loading="lazy"></div>
     <div>
         <div class="like"> <span id="like-count-${index}">likes: ${book.likes} </span> 
         <img id="like-icon-${index}" src="${book.liked ? "./assets/icons/like.svg" : "./assets/icons/dislike.svg"}" alt="like Bild" 
