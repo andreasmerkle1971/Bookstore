@@ -5,10 +5,11 @@ function renderBooks() {
     for (let index = 0; index < books.length; index++) {
         const book = books[index];
         const formatierterPrice = formatPrice(book.price);
-        const comments = Array.isArray(book.comments) && book.comments.length > 0
-        ? book.comments.map((c) =>`<p> <strong>${c.name}:</strong><br> ${c.comment}</p>`,).join("")
-        : book.comments;
-        booksContainer.innerHTML += getNoteTemplate(index, book, comments, formatierterPrice );
+        const comments =
+            Array.isArray(book.comments) && book.comments.length > 0
+                ? book.comments.map((c) =>`<p> <strong>${c.name}:</strong><br> ${c.comment}</p>`,).join("")
+                : book.comments;
+            booksContainer.innerHTML += getNoteTemplate(index, book, comments, formatierterPrice,);
     }
 }
 
@@ -26,31 +27,25 @@ function likeDislikeToggle(index) {
     const likeIcon = document.getElementById(`like-icon-${index}`);
     const currentLikes = document.getElementById(`like-count-${index}`);
     if (book.liked) {
-        book.liked = false;
-        book.likes--;
+        book.liked = false; book.likes--;
         likeIcon.src = "./assets/icons/dislike.svg";
     } else {
         book.liked = true;
-        book.likes++;
-        likeIcon.src = "./assets/icons/like.svg";
+        book.likes++; likeIcon.src = "./assets/icons/like.svg";
     }
     currentLikes.textContent = `likes: ${book.likes}`;
 }
 
 function addComment(event, index, triggerType) {
     if (
-        triggerType === "click" ||
-        (triggerType === "keydown" && event.key === "Enter")
+        triggerType === "click" || (triggerType === "keydown" && event.key === "Enter")
     ) {
         const inputField = document.getElementById(`input-comment-${index}`);
         const commentText = inputField.value.trim();
         if (commentText !== "") {
-            if (!Array.isArray(books[index].comments))
-                books[index].comments = [];
+            if (!Array.isArray(books[index].comments)) books[index].comments = [];
             addLatestComment(index, commentText);
-            const commentsBox = document.getElementById(
-                `comments-box-${index}`,
-            );
+            const commentsBox = document.getElementById(`comments-box-${index}`,);
             if (commentsBox) renderLatestCommentBox(index, commentsBox);
             inputField.value = "";
         }
