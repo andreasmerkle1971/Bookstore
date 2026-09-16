@@ -3,7 +3,12 @@ function renderBooks() {
     if (!booksContainer) return;
     booksContainer.innerHTML = "";
     for (let index = 0; index < books.length; index++) {
-        booksContainer.innerHTML += getNoteTemplate(index);
+        const book = books[index];
+        const formatierterPrice = formatPrice(book.price);
+        const comments = Array.isArray(book.comments) && book.comments.length > 0
+        ? book.comments.map((c) =>`<p> <strong>${c.name}:</strong><br> ${c.comment}</p>`,).join("")
+        : book.comments;
+        booksContainer.innerHTML += getNoteTemplate(index, book, comments, formatierterPrice );
     }
 }
 
@@ -53,7 +58,6 @@ function addComment(event, index, triggerType) {
 }
 
 function addLatestComment(index, commentText) {
-    // let list = listInput;
     books[index].comments.unshift({
         name: "Du",
         comment: commentText,

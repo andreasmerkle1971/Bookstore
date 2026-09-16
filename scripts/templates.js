@@ -1,16 +1,5 @@
-function getNoteTemplate(index) {
-    const book = books[index];
-    const comments =
-        Array.isArray(book.comments) && book.comments.length > 0
-            ? book.comments
-                  .map(
-                      (c) =>
-                          `<p> <strong>${c.name}:</strong><br> ${c.comment}</p>`,
-                  )
-                  .join("")
-            : book.comments;
+function getNoteTemplate(index, book, comments, formatierterPrice) {
 
-    const formatierterPrice = formatPrice(book.price);
     return `
     <div class="card">
         <div class="books-gallery"><h2>${book.name}</h2></div>
