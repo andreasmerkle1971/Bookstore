@@ -120,7 +120,7 @@ footer {
         width: 25px;
         height: 25px;
         background-color: #a46433;
-        background-image: url("/assets/icons/senden.svg");
+        background-image: url("../assets/icons/senden.svg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
